@@ -31,9 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MavenThought.Commons\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\MavenThought.Commons\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MavenThought.Commons\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MavenThought.Commons\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -114,6 +126,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="When_windsor_resolves_all_references.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="When_windsor_resolves_with_naming.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="When_windsor_resolves_greediest_constrcutor.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\When_movies_controller_calls_create_movie_action_post.cs">
       <DependentUpon>MoviesControllerSpecification.cs</DependentUpon>
     </Compile>
@@ -127,6 +148,23 @@
     <Compile Include="Helpers\When_image_helper_local_title_does_not_exists.cs">
       <DependentUpon>ImageHelperSpecification.cs</DependentUpon>
     </Compile>
+    <Compile Include="When_windsor_registers_type.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DummyMovie.cs" />
+    <Compile Include="When_windsor_registers_instance.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="When_windsor_registers_transient_type.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="When_windsor_resolves_greediest_constructor_possible.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="When_windsor_resolves_with_parameters.cs">
+      <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindsorContainerSpecification.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

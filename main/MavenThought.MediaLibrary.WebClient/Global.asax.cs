@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.Windsor;
+using MvcContrib.Castle;
 using NHaml.Web.Mvc;
 
 namespace MavenThought.MediaLibrary.WebClient
@@ -33,8 +36,24 @@ namespace MavenThought.MediaLibrary.WebClient
             // Add nhaml engine
             ViewEngines.Engines.Add(new NHamlMvcViewEngine());
 
+            // Setup IoC container
+            this.SetupContainer();
+
+            // Register the factory for the controllers
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(this.Container));
+   
             // Register the routes
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        /// <summary>
+        /// Container property
+        /// </summary>
+        protected IWindsorContainer Container { get; set; }
+
+        private void SetupContainer()
+        {
+            
         }
     }
 }
