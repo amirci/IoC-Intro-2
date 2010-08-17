@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\SubmitHelper.cs" />
+    <Compile Include="Models\IMovieFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,9 +185,6 @@
       <Project>{058D869F-B50A-49F7-B93B-8B5F0EEDE9EB}</Project>
       <Name>MavenThought.MediaLibrary.Storage.NHibernate</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

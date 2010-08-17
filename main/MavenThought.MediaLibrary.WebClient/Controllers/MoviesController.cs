@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using MavenThought.MediaLibrary.Core;
 using MavenThought.MediaLibrary.Domain;
+using MavenThought.MediaLibrary.WebClient.Models;
 
 namespace MavenThought.MediaLibrary.WebClient.Controllers
 {
@@ -16,12 +16,19 @@ namespace MavenThought.MediaLibrary.WebClient.Controllers
         private readonly IMediaLibrary _library;
 
         /// <summary>
+        /// Factory backing field
+        /// </summary>
+        private readonly IMovieFactory _factory;
+
+        /// <summary>
         /// Initializes the controller
         /// </summary>
         /// <param name="library">Library to use</param>
-        public MoviesController(IMediaLibrary library)
+        /// <param name="factory">Factory to create movies</param>
+        public MoviesController(IMediaLibrary library, IMovieFactory factory)
         {
             _library = library;
+            _factory = factory;
         }
 
         /// <summary>
@@ -50,10 +57,8 @@ namespace MavenThought.MediaLibrary.WebClient.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create(string title)
         {
-            this._library.Add(new Movie
-                                  {
-                                      Title = title
-                                  });
+            this._library.Add(this._factory.Create(title));
+
             return Redirect("Index");
         }
     }
