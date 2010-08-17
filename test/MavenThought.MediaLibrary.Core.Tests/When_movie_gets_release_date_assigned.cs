@@ -27,7 +27,7 @@ namespace MavenThought.MediaLibrary.Core.Tests
         /// <summary>
         /// Checks the value was updated
         /// </summary>
-        [It]
+        [Test]
         public void Should_update_the_release_date()
         {
             this.Sut.ReleaseDate.Should().Be.EqualTo(this._expected);

@@ -9,5 +9,13 @@ namespace MavenThought.MediaLibrary.Core.Tests
     public abstract class MovieSpecification
         : AutoMockSpecification<Movie, IMovie>
     {
+        /// <summary>
+        /// Returns default movie
+        /// </summary>
+        /// <returns></returns>
+        protected override IMovie CreateSut()
+        {
+            return new Movie();
+        }
     }
 }
