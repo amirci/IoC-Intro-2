@@ -122,6 +122,7 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\SubmitHelper.cs" />
     <Compile Include="Models\IMovieFactory.cs" />
+    <Compile Include="Models\MovieFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,22 @@ namespace MavenThought.MediaLibrary.Core
     public class Movie : IMovie
     {
         /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Movie()
+        {
+        }
+
+        /// <summary>
+        /// Constructor with title
+        /// </summary>
+        /// <param name="title"></param>
+        public Movie(string title)
+        {
+            this.Title = title;    
+        }
+
+        /// <summary>
         /// Gets or sets the id of the movie
         /// </summary>
         public virtual int Id { get; set; }

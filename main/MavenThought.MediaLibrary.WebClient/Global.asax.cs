@@ -6,6 +6,7 @@ using MavenThought.MediaLibrary.Core;
 using MavenThought.MediaLibrary.Domain;
 using MavenThought.MediaLibrary.Storage.NHibernate;
 using MavenThought.MediaLibrary.WebClient.Controllers;
+using MavenThought.MediaLibrary.WebClient.Models;
 using MvcContrib.Castle;
 using NHaml.Web.Mvc;
 
@@ -44,7 +45,8 @@ namespace MavenThought.MediaLibrary.WebClient
             this.SetupContainer();
 
             // Register the factory for the controllers
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(this.Container));
+            ControllerBuilder.Current
+                .SetControllerFactory(new WindsorControllerFactory(this.Container));
    
             // Register the routes
             RegisterRoutes(RouteTable.Routes);
@@ -63,10 +65,13 @@ namespace MavenThought.MediaLibrary.WebClient
             this.Container = new WindsorContainer();
 
             this.Container.Register(
+                Component.For<IWindsorContainer>().Instance(this.Container),
                 Component.For<MoviesController>().Named("MoviesController").LifeStyle.Transient,
                 Component.For<HomeController>().Named("HomeController").LifeStyle.Transient,
                 Component.For<IMediaLibrary>().ImplementedBy<SimpleMediaLibrary>(),
-                Component.For<IMediaLibraryStorage>().Instance(new NHMediaLibraryStorage("c:/temp/movies.db"))
+                Component.For<IMediaLibraryStorage>().Instance(new NHMediaLibraryStorage("c:/temp/movies.db")),
+                Component.For<IMovieFactory>().ImplementedBy<MovieFactory>(),
+                Component.For<IMovie>().ImplementedBy<Movie>().LifeStyle.Transient
                 );
         }
     }

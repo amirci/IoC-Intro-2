@@ -126,6 +126,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\MovieFactorySpecification.cs" />
+    <Compile Include="Model\When_movie_factory_creates_movie.cs" />
     <Compile Include="When_windsor_resolves_all_references.cs">
       <DependentUpon>WindsorContainerSpecification.cs</DependentUpon>
     </Compile>
