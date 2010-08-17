@@ -1,4 +1,5 @@
 using MavenThought.Commons.Testing;
+using MbUnit.Framework;
 using MvcContrib.TestHelper;
 
 namespace MavenThought.MediaLibrary.WebClient.Tests.Controllers
@@ -12,7 +13,7 @@ namespace MavenThought.MediaLibrary.WebClient.Tests.Controllers
         /// <summary>
         /// Checks the view returned is to add a movie
         /// </summary>
-        [It]
+        [Test]
         public void Should_return_the_form_to_create()
         {
             this.ActualResult.AssertViewRendered();

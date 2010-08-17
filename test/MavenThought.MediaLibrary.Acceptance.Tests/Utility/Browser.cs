@@ -109,9 +109,11 @@ namespace MavenThought.MediaLibrary.Acceptance.Tests.Utility
         /// <param name="applicationPath">Path to the web application</param>
         private static void UpdateConfiguraiton(string applicationPath)
         {
+
             // Get the file name
             var booConfigFileName = Path.Combine(applicationPath, "Global.boo");
 
+            /*
             // Read the file and change the line
             var configFile = File.ReadAllLines(booConfigFileName);
 
@@ -121,6 +123,7 @@ namespace MavenThought.MediaLibrary.Acceptance.Tests.Utility
 
             // Write the file
             File.WriteAllLines(booConfigFileName, configFile);
+            */
         }
     }
 }

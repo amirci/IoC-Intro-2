@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="IMediaElement.cs" />
     <Compile Include="IMediaLibrary.cs" />
+    <Compile Include="IMediaLibraryStorage.cs" />
     <Compile Include="IMediaReview.cs" />
     <Compile Include="IMovie.cs" />
     <Compile Include="IPerson.cs" />

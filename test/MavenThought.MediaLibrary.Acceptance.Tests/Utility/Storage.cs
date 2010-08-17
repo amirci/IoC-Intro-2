@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using MavenThought.MediaLibrary.Core;
 using MavenThought.MediaLibrary.Domain;
 using MavenThought.MediaLibrary.Storage.NHibernate;
 
@@ -14,9 +15,10 @@ namespace MavenThought.MediaLibrary.Acceptance.Tests.Utility
         /// </summary>
         static Storage()
         {
-            DatabaseFile = Path.GetTempFileName();
+            // DatabaseFile = Path.GetTempFileName();
+            DatabaseFile = "c:/temp/movies.db";
 
-            Instance = new StorageMediaLibrary(DatabaseFile);
+            Instance = new SimpleMediaLibrary(new NHMediaLibraryStorage(DatabaseFile));
         }
 
         /// <summary>

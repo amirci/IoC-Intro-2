@@ -90,14 +90,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PersistentMovieSpecification.cs" />
-    <Compile Include="StorageMediaLibrarySpecification.cs" />
+    <Compile Include="NHMediaLibraryStorageSpecification.cs" />
     <Compile Include="BaseStorageSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="When_storage_library_adds_movies.cs">
-      <DependentUpon>StorageMediaLibrarySpecification.cs</DependentUpon>
+    <Compile Include="WhenNhMediaLibraryStorageLibraryAddsMovies.cs">
+      <DependentUpon>NHMediaLibraryStorageSpecification.cs</DependentUpon>
     </Compile>
-    <Compile Include="When_storage_library_gets_contents.cs">
-      <DependentUpon>StorageMediaLibrarySpecification.cs</DependentUpon>
+    <Compile Include="WhenNhMediaLibraryStorageLibraryGetsContents.cs">
+      <DependentUpon>NHMediaLibraryStorageSpecification.cs</DependentUpon>
     </Compile>
     <Compile Include="When_movie_is_created.cs">
       <DependentUpon>PersistentMovieSpecification.cs</DependentUpon>

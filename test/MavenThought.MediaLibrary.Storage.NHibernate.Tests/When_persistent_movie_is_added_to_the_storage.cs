@@ -46,7 +46,7 @@ namespace MavenThought.MediaLibrary.Storage.NHibernate.Tests
         {
             base.GivenThat();
 
-            this._movie = new Movie() { Title = "Blazing Saddles" };
+            this._movie = new Movie { Title = "Blazing Saddles" };
         }
 
         /// <summary>

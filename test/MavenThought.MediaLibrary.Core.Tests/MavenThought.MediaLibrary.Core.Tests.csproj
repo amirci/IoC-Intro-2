@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SimpleMediaLibrarySpecification.cs" />
     <Compile Include="MovieSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="When_movie_gets_title_assigned.cs">
@@ -76,6 +77,15 @@
     </Compile>
     <Compile Include="When_movie_gets_release_date_assigned.cs">
       <DependentUpon>MovieSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhenSimpleMediaLibraryAddsSimpleMedia.cs">
+      <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhenSimpleMediaLibraryRetrieveContents.cs">
+      <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhenSimpleMediaLibraryClearsTheStorage.cs">
+      <DependentUpon>SimpleMediaLibrarySpecification.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

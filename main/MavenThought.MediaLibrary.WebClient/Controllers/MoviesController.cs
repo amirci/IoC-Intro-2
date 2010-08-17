@@ -18,10 +18,15 @@ namespace MavenThought.MediaLibrary.WebClient.Controllers
         private readonly IMediaLibrary _library;
 
         /// <summary>
+        /// Storage to use
+        /// </summary>
+        private static readonly IMediaLibraryStorage _storage = new NHMediaLibraryStorage("c:/temp/movies.db");
+
+        /// <summary>
         /// Default constructor
         /// </summary>
         public MoviesController()
-            : this(new StorageMediaLibrary("c:/temp/movies.db"))
+            : this(new SimpleMediaLibrary(_storage))
         {
         }
 

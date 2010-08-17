@@ -10,6 +10,9 @@ namespace MavenThought.MediaLibrary.WebClient.Tests.Controllers
     public abstract class MoviesControllerSpecification
         : AutoMockSpecificationWithNoContract<MoviesController>
     {
+        /// <summary>
+        /// Actual result obtained
+        /// </summary>
         protected ActionResult ActualResult { get; set; }
     }
 }
