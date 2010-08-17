@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -64,8 +63,8 @@ namespace MavenThought.MediaLibrary.WebClient
             this.Container = new WindsorContainer();
 
             this.Container.Register(
-                Component.For<Controller>().ImplementedBy<MoviesController>().Named("Movies"),
-                Component.For<Controller>().ImplementedBy<HomeController>().Named("Home"),
+                Component.For<MoviesController>().Named("MoviesController").LifeStyle.Transient,
+                Component.For<HomeController>().Named("HomeController").LifeStyle.Transient,
                 Component.For<IMediaLibrary>().ImplementedBy<SimpleMediaLibrary>(),
                 Component.For<IMediaLibraryStorage>().Instance(new NHMediaLibraryStorage("c:/temp/movies.db"))
                 );

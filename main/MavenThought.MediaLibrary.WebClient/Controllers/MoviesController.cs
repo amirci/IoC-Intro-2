@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using MavenThought.MediaLibrary.Core;
 using MavenThought.MediaLibrary.Domain;
-using MavenThought.MediaLibrary.Storage.NHibernate;
 
 namespace MavenThought.MediaLibrary.WebClient.Controllers
 {
