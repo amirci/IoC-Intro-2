@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using MavenThought.MediaLibrary.Core;
+using MavenThought.MediaLibrary.Domain;
+using MavenThought.MediaLibrary.Storage.NHibernate;
+using MavenThought.MediaLibrary.WebClient.Controllers;
 using MvcContrib.Castle;
 using NHaml.Web.Mvc;
 
@@ -51,9 +56,19 @@ namespace MavenThought.MediaLibrary.WebClient
         /// </summary>
         protected IWindsorContainer Container { get; set; }
 
+        /// <summary>
+        /// Register controllers and other types
+        /// </summary>
         private void SetupContainer()
         {
-            
+            this.Container = new WindsorContainer();
+
+            this.Container.Register(
+                Component.For<Controller>().ImplementedBy<MoviesController>().Named("Movies"),
+                Component.For<Controller>().ImplementedBy<HomeController>().Named("Home"),
+                Component.For<IMediaLibrary>().ImplementedBy<SimpleMediaLibrary>(),
+                Component.For<IMediaLibraryStorage>().Instance(new NHMediaLibraryStorage("c:/temp/movies.db"))
+                );
         }
     }
 }
